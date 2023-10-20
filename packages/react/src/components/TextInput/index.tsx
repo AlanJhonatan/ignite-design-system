@@ -1,10 +1,15 @@
 import { ComponentProps } from '../../types/ComponentProps'
-import { TextInputContainer } from './styles'
+import { Input, Prefix, TextInputContainer } from './styles'
 
-export type TextInputProps = object
+export interface TextInputProps extends ComponentProps<typeof Input> {
+  prefix?: string
+}
 
-// export type TextInputProps = ComponentProps<typeof TextInputContainer>
-
-export function TextInput() {
-  return <TextInputContainer />
+export function TextInput({ prefix, ...props }: TextInputProps) {
+  return (
+    <TextInputContainer>
+      {!!prefix && <Prefix>{prefix}</Prefix>}
+      <Input {...props} />
+    </TextInputContainer>
+  )
 }
