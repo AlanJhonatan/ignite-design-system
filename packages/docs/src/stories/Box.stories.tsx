@@ -6,11 +6,14 @@ export default {
   component: Box,
   tags: ['autodocs'],
   args: {
-    children: (
-      <>
-        <Text>Testando o elemento Box</Text>
-      </>
-    ),
+    children: <Text>Testando o elemento Box</Text>,
+  },
+  argTypes: {
+    children: {
+      control: {
+        type: null,
+      },
+    },
   },
 } as Meta<BoxProps>
 
