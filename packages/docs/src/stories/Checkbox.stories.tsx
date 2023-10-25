@@ -4,6 +4,7 @@ import { Meta, StoryObj } from '@storybook/react'
 export default {
   title: 'Form/Checkbox',
   component: Checkbox,
+  tags: ['autodocs'],
   args: {},
   decorators: [
     (Story) => {

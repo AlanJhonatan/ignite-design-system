@@ -5,6 +5,7 @@ export default {
   title: 'Form/Text Area',
   component: TextArea,
   args: {},
+  tags: ['autodocs'],
   decorators: [
     (Story) => {
       return (
