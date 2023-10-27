@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps, Text } from '@ignite-ui/react'
+import { Avatar, AvatarProps, Text } from '@zizao/react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
