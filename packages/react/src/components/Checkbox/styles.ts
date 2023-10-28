@@ -22,6 +22,10 @@ export const CheckboxContainer = styled(Checkbox.Root, {
   '&:focus': {
     border: '2px solid $ignite300',
   },
+
+  '&:focus, &[data-state="checked"]': {
+    border: '2px solid $ignite300',
+  },
 })
 
 const slideIn = keyframes({
