@@ -1,5 +1,11 @@
 # @zizao/react
 
+## 2.0.2
+
+### Patch Changes
+
+- Add custom styling to the TextInput Container fowarding props
+
 ## 2.0.1
 
 ### Patch Changes
