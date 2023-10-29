@@ -1,5 +1,11 @@
 # @zizao/react
 
+## 2.0.3
+
+### Patch Changes
+
+- Fix the ComponentProps 'as' property, changing from required to optional.
+
 ## 2.0.2
 
 ### Patch Changes
