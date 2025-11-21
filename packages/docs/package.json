@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "lint": "eslint src/**/*.ts* --fix",
-    "build": "storybook build",
+    "build": "storybook build --output-dir dist/",
     "deploy": "touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true"
   },
   "keywords": [],
