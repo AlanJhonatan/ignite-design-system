@@ -118,4 +118,4 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
-> Built with ❤️ as part of the Rocketseat Ignite ecosystem.
+> Built with ❤️ as part of hours studying from Rocketseat contents.
