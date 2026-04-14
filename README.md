@@ -1,81 +1,121 @@
-# Ignite Design System
+# 🚀 Ignite Design System
 
-This monorepo contains a design system with tokens, React components and documentation powered by Storybook.
+A robust, type-safe Design System featuring design tokens, React components, and automated documentation. Built as a monorepo for maximum scalability and performance.
 
-**Overview**
-- **Purpose**: provide reusable design tokens and React components for applications.
-- **Workspaces**: managed with `npm` workspaces (`packages/*`).
-- **Orchestration**: build/dev scripts use `turbo` at the repository root.
+[![npm version](https://img.shields.io/npm/v/@zizao/react.svg)](https://www.npmjs.com/package/@zizao/react)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Repository structure**
-- `packages/docs` — documentation and Storybook (pages, stories, helper components).
-- `packages/react` — React components (exports in `src/index.tsx`).
-- `packages/tokens` — design tokens (colors, spacing, fonts, etc.).
-- `packages/eslint-config`, `packages/ts-config` — shared configs.
+---
 
-**Quick Start**
-From the repository root:
+## 🏗️ Architecture
 
-```fish
-# install dependencies
+This repository is managed as an **npm monorepo** using **TurboRepo** for optimized task execution and **Changesets** for automated versioning and publishing.
+
+- **`@zizao/tokens`**: Core design tokens (colors, spacing, fonts, etc.).
+- **`@zizao/react`**: Component library built with **Stitches** and **Radix UI**.
+- **`@zizao/docs`**: Documentation site and interactive playground powered by **Storybook**.
+- **`@zizao/eslint-config` / `@zizao/ts-config`**: Shared development configurations.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React 18+](https://reactjs.org/)
+- **Styling**: [Stitches](https://stitches.dev/) (CSS-in-JS)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Primitives**: [Radix UI](https://www.radix-ui.com/) (Accessible components)
+- **Icons**: [Phosphor Icons](https://phosphoricons.com/)
+- **Build System**: [TurboRepo](https://turbo.build/repo)
+- **Bundler**: [tsup](https://tsup.egoist.dev/) (esbuild-powered)
+- **Documentation**: [Storybook 7](https://storybook.js.org/)
+- **Versioning**: [Changesets](https://github.com/changesets/changesets)
+
+---
+
+## ✨ Features
+
+### 🎨 Design Tokens
+Fully configurable tokens for:
+- **Colors**: Custom palette with primary brand colors.
+- **Typography**: Fonts, font sizes, font weights, and line heights.
+- **Layout**: Spacing scale, border radii, and breakpoints.
+
+### 🧩 Components
+Accessible and highly customizable React components:
+- **Layout**: `Box`, `Text`, `Heading`
+- **Actions**: `Button`
+- **Forms**: `TextInput`, `TextArea`, `Checkbox`
+- **Display**: `Avatar`, `MultiStep`
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- `npm` (Workspaces support)
+
+### Installation
+Clone the repository and install dependencies:
+```bash
 npm install
-
-# run all dev scripts in parallel (turbo)
-npm run dev
 ```
 
-Run only the Storybook (inside the `docs` package):
-
-```fish
-cd packages/docs
+### Development
+Run all packages in parallel (TurboRepo):
+```bash
 npm run dev
-# Storybook will be available at http://localhost:6006
 ```
+- **Storybook**: [http://localhost:6006](http://localhost:6006)
 
-Build all packages (root):
-
-```fish
+### Build
+Generate production-ready bundles:
+```bash
 npm run build
 ```
 
-Build Storybook:
+---
 
-```fish
-cd packages/docs
-npm run build
-```
+## 📦 Usage
 
-**How to import the packages locally**
-When using workspaces locally (or after publishing):
-
-```js
-import { Button } from '@zizao/react'
-import { colors, space } from '@zizao/tokens'
-```
-
-Quick example using Stitches (already configured):
-
+### Importing Components
 ```tsx
-import { styled } from '@zizao/react'
+import { Button, Text } from '@zizao/react'
 
-const MyBox = styled('div', {
-  background: '$gray800',
-  padding: '$4',
-})
+export function App() {
+  return (
+    <Button variant="primary">
+      <Text size="sm">Click Me</Text>
+    </Button>
+  )
+}
 ```
 
-**Available tokens**
-- `colors` — defined in `packages/tokens/src/colors.ts` (e.g. `$gray100`, `$ignite500`).
-- `space` — spacing scale (e.g. `$4`, `$8`).
-- `fontSizes`, `fontWeights`, `fonts`, `lineHeights`, `radii`
+### Using Tokens
+```tsx
+import { colors, space } from '@zizao/tokens'
 
-**Build & publishing**
-- The `@zizao/react` package uses `tsup` to generate `dist` (ESM + CJS + `.d.ts`).
-- Versioning/publishing uses `changesets` (root scripts):
-  - `npm run version-packages` (`changeset version`)
-  - `npm run release` (build + `changeset publish`) — note the current script filters out `docs` from publishing.
+const myStyle = {
+  backgroundColor: colors.ignite500,
+  padding: space[4],
+}
+```
 
-**Important notes**
-- Some tooling dependencies (Storybook, Vite, tsup/esbuild) may show vulnerabilities on audits. Updates can introduce breaking changes — review before upgrading.
-- `packages/react` uses `@stitches/react` for theming and consumes tokens from `@zizao/tokens`.
+---
 
+## 🚢 Publishing
+
+This project uses **Changesets** for automated versioning.
+
+1. Create a changeset: `npm run changeset`
+2. Update versions: `npm run version-packages`
+3. Publish to npm: `npm run release`
+
+---
+
+## 📄 License
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+
+> Built with ❤️ as part of the Rocketseat Ignite ecosystem.
